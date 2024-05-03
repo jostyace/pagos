@@ -1,6 +1,12 @@
 import { MapPinIcon } from "@heroicons/react/24/outline"
 
 export const User = ({detalles}) => {
+
+  const handleClick = () => {
+    const url = 'https://wa.me/+593982451264';
+    window.open(url, '_blank');
+  };
+
   return (
 <li className="bg-white w-11/12 rounded-lg shadow-md p-6">
         <div>
@@ -12,7 +18,7 @@ export const User = ({detalles}) => {
           <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 mt-4 rounded transition duration-300 ease-in-out">{detalles}</button>
           <button className=" bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 mt-4 rounded transition duration-300 ease-in-out"><MapPinIcon className="w-[20px]"/></button>
           <button className=" bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 mt-4 rounded transition duration-300 ease-in-out">
-          <svg className='w-[20px] h-[20px] stroke-white fill-white'>
+          <svg onClick={handleClick} className='w-[20px] h-[20px] stroke-white fill-white'>
                 <use href="/whatsapp.svg#whatsapplogo" />
               </svg>
           </button>
