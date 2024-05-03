@@ -1,9 +1,8 @@
 import { useState } from "react";
 import fs from "fs";
-import { TextField } from "@mui/material";
-import { MapPinIcon } from "@heroicons/react/24/outline";
+import { MapPinIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
-export const NewUser = () => {
+export const NewUser = ({setNewModal}) => {
   const [nombre, setNombre] = useState("");
   const [telefono, setTelefono] = useState("");
   const [direccion, setDireccion] = useState("");
@@ -14,7 +13,6 @@ export const NewUser = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      // Crear un objeto con los datos del nuevo usuario
       const nuevoUsuario = {
         nombre,
         telefono,
@@ -23,17 +21,15 @@ export const NewUser = () => {
         referencia,
       };
 
-      // Leer el archivo usuarios.json si existe
       let usuarios = [];
       if (fs.existsSync("./usuarios.json")) {
-        const data = fs.readFileSync("./usuarios.json", "utf8");
+        const data = fs.readFileSync("/usuarios.json", "utf8");
         usuarios = JSON.parse(data);
+        console.log("Usuarios leídos:", usuarios);
       }
 
-      // Agregar el nuevo usuario al arreglo
       usuarios.push(nuevoUsuario);
 
-      // Escribir los datos en el archivo usuarios.json
       fs.writeFileSync("./usuarios.json", JSON.stringify(usuarios));
 
       console.log("Usuario guardado correctamente:", nuevoUsuario);
@@ -72,13 +68,13 @@ export const NewUser = () => {
   };
 
   return (
-    <div className="w-screen h-screen fixed items-center justify-center flex top-0 z-50 bg-[#0101019c]">
-      <div className=" w-11/12 h-4/5 p-10 bg-white">
+    <div className="w-screen h-screen fixed items-center  justify-center flex top-0 z-50 bg-[#0101019c]">
+      <div className="relative rounded-2xl w-11/12 h-4/5 p-10 bg-white">
         <h2 className=" font-black text-3xl p-5 w-full text-center">
           Crear Nuevo Usuario
         </h2>
         {error && <p className="text-red-500">{error}</p>}
-        <form onSubmit={handleSubmit}>
+        <form  onSubmit={handleSubmit}>
           <div className="grid gap-6 mb-6 md:grid-cols-2">
             <div>
               <input
@@ -139,7 +135,7 @@ export const NewUser = () => {
               <button
                 onClick={obtenerUbicacion}
                 type="button"
-                className="relative w-1/12 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                className="relative w-[60px] flex justify-center items-center rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
               >
                 <span className="absolute -inset-1.5" />
                 <span className="sr-only">View notifications</span>
@@ -165,6 +161,11 @@ export const NewUser = () => {
           >
             Submit
           </button>
+          <button
+                onClick={()=>setNewModal(false)}
+                type="button"
+                className="absolute w-[40px] top-[10px] right-[10px]  flex justify-center items-center rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              ><XMarkIcon/> </button>
         </form>
       </div>
     </div>

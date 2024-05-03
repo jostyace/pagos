@@ -6,9 +6,11 @@ import { NewUser } from './components/NewUser/NewUser';
 import { Search } from './components/Search/Search';
 import { User } from './components/User/User'
 import { Mapa } from './components/Mapa/Mapa';
+import { NuevoCredito } from './components/NuevoCredito/NuevoCredito';
 
 function App() {
   const [newModal, setNewModal] = useState(false)
+  const [nuevoCredito, setNuevoCredito] = useState(false)
   const latitude = -2.2174673333358568; // Ejemplo de latitud
   const longitude = -80.85680016072722; // Ejemplo de longitud
   const zoom = 1;
@@ -20,7 +22,7 @@ function App() {
       <h1 className="text-3xl font-semibold text-center mb-6">Lista de Usuarios</h1>
       <ul className="flex flex-col justify-center items-center gap-6">
         <Search/>
-        <User detalles='Otorgar Crédito' color='#339955'/>
+        <User onClick={()=>setNuevoCredito(true)} detalles='Otorgar Crédito' color='#339955'/>
         <User detalles='Otorgar Crédito' color='#339955' />
         <User detalles='Ver Crédito' color='#339955' />
         <User detalles='Otorgar Crédito' color='#339955' />
@@ -28,8 +30,10 @@ function App() {
         
       </ul>
       <MapLink latitude={latitude} longitude={longitude} />
-      {newModal && <NewUser/>}
+      {newModal && <NewUser setNewModal={setNewModal}/>}
+      {nuevoCredito && <NuevoCredito setNuevoCredito={setNuevoCredito}/>}
       <Mapa longitude={longitude} latitude={latitude} zoom={zoom}/>
+
   </div>
 
   </>

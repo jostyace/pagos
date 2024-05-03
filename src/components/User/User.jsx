@@ -1,6 +1,6 @@
 import { MapPinIcon } from "@heroicons/react/24/outline"
 
-export const User = ({detalles}) => {
+export const User = ({detalles, onClick}) => {
 
   const handleClick = () => {
     const url = 'https://wa.me/+593982451264';
@@ -15,7 +15,7 @@ export const User = ({detalles}) => {
           <p className="text-gray-600">Teléfono: +123456789</p>
         </div>
         <div className="flex gap-2">
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 mt-4 rounded transition duration-300 ease-in-out">{detalles}</button>
+          <button onClick={onClick} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 mt-4 rounded transition duration-300 ease-in-out">{detalles}</button>
           <button className=" bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 mt-4 rounded transition duration-300 ease-in-out"><MapPinIcon className="w-[20px]"/></button>
           <button className=" bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 mt-4 rounded transition duration-300 ease-in-out">
           <svg onClick={handleClick} className='w-[20px] h-[20px] stroke-white fill-white'>
