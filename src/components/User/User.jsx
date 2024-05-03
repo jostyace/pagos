@@ -1,0 +1,21 @@
+import { MapPinIcon } from "@heroicons/react/24/outline"
+
+export const User = ({detalles}) => {
+  return (
+<li className="bg-white w-11/12 rounded-lg shadow-md p-6">
+        <div>
+          <h2 className="text-xl font-semibold mb-2">Nombre del Usuario 1</h2>
+          <p className="text-gray-600">Correo electrónico: usuario1@example.com</p>
+          <p className="text-gray-600">Teléfono: +123456789</p>
+        </div>
+        <div className="flex gap-2">
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 mt-4 rounded transition duration-300 ease-in-out">{detalles}</button>
+          <button className=" bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 mt-4 rounded transition duration-300 ease-in-out"><MapPinIcon className="w-[20px]"/></button>
+          <button className=" bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 mt-4 rounded transition duration-300 ease-in-out">
+          <svg className='w-[20px] h-[20px] stroke-white fill-white'>
+                <use href="/whatsapp.svg#whatsapplogo" />
+              </svg>
+          </button>
+        </div>
+      </li>  )
+}

@@ -1,0 +1,32 @@
+[
+    {
+        "direccion": "Calle 123, Ciudad XYZ",
+        "nombre": "Juan Perez",
+        "referencia": "Cerca del parque principal",
+        "telefono": "123456789",
+        "ubicacion": {
+            "latitude": "40.7128",
+            "longitude": "-74.0060"
+        }
+    },
+    {
+        "direccion": "Av. Principal, Ciudad ABC",
+        "nombre": "María López",
+        "referencia": "Frente al supermercado",
+        "telefono": "987654321",
+        "ubicacion": {
+            "latitude": "37.7749",
+            "longitude": "-122.4194"
+        }
+    },
+    {
+        "direccion": "Calle 456, Ciudad XYZ",
+        "nombre": "Carlos García",
+        "referencia": "Al lado del restaurante",
+        "telefono": "555555555",
+        "ubicacion": {
+            "latitude": "34.0522",
+            "longitude": "-118.2437"
+        }
+    }
+]
