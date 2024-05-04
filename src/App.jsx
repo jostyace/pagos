@@ -24,11 +24,11 @@ function App() {
       <h1 className="text-3xl font-semibold text-center mb-6">Lista de Usuarios</h1>
       <ul className="flex flex-col justify-center items-center gap-6">
         <Search/>
-        <User onClick={()=>setNuevoCredito(true)} detalles='Otorgar Crédito' color='#339955'/>
-        <User detalles='Otorgar Crédito' color='#339955' />
-        <User onClick={()=>setVerCredito(true)} detalles='Ver Crédito' color='#339955' />
-        <User detalles='Otorgar Crédito' color='#339955' />
-        <User detalles='Otorgar Crédito' color='#339955' />
+        <User latitude={latitude} longitude={longitude} location={location} onClick={()=>setNuevoCredito(true)} detalles='Otorgar Crédito' color='#339955'/>
+        <User latitude={latitude} longitude={longitude} location={location} detalles='Otorgar Crédito' color='#339955' />
+        <User latitude={latitude} longitude={longitude} location={location} onClick={()=>setVerCredito(true)} detalles='Ver Crédito' color='#339955' />
+        <User latitude={latitude} longitude={longitude} location={location} detalles='Otorgar Crédito' color='#339955' />
+        <User latitude={latitude} longitude={longitude} location={location} detalles='Otorgar Crédito' color='#339955' />
         
       </ul>
       <MapLink latitude={latitude} longitude={longitude} />

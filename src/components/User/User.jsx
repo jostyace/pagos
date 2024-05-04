@@ -1,9 +1,14 @@
 import { MapPinIcon } from "@heroicons/react/24/outline"
 
-export const User = ({detalles, onClick}) => {
+export const User = ({detalles, onClick, longitud, latitud }) => {
 
   const handleClick = () => {
     const url = 'https://wa.me/+593982451264';
+    window.open(url, '_blank');
+  };
+
+  const abrirLocation = () => {
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${latitud},${longitud}`;
     window.open(url, '_blank');
   };
 
@@ -17,7 +22,7 @@ export const User = ({detalles, onClick}) => {
         <div className="flex justify-between gap-2">
           <button onClick={onClick} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 mt-4 rounded transition duration-300 ease-in-out">{detalles}</button>
           <div className="flex gap-2">
-            <button className=" bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 mt-4 rounded transition duration-300 ease-in-out"><MapPinIcon className="w-[20px]"/></button>
+            <button onClick={abrirLocation}  className=" bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 mt-4 rounded transition duration-300 ease-in-out"><MapPinIcon className="w-[20px]"/></button>
             <button className=" bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 mt-4 rounded transition duration-300 ease-in-out">
             <svg onClick={handleClick} className='w-[20px] h-[20px] stroke-white fill-white'>
                   <use href="/whatsapp.svg#whatsapplogo" />
