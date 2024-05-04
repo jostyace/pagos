@@ -15,7 +15,7 @@ export const VerCredito = ({ setVerCredito }) => {
 
   return (
     <div className="w-screen h-screen fixed items-center justify-center flex top-0 z-50 bg-[#0101019c]">
-      <div className="relative flex flex-col gap-2 rounded-2xl w-11/12 !h-[95%] p-10 bg-white">
+      <div className="relative flex flex-col gap-2 rounded-2xl w-11/12 !h-[90%] p-10 bg-white">
         <h2 className="font-black text-xl p-1 w-full text-center">
           Detalles del Crédito
         </h2>

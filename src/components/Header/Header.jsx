@@ -3,10 +3,8 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon, UserPlusIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
+  { name: 'Clientes', href: '#', current: true },
+  { name: 'Opciones', href: '#', current: false },
 ]
 
 function classNames(...classes) {
@@ -24,7 +22,7 @@ function Header({setNewModal}) {
               {/* Mobile menu button*/}
               <Disclosure.Button className="relative inline-flex items-center justify-center outline-none rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white ">
                 <span className="absolute -inset-0.5" />
-                <span className="sr-only">Open main menu</span>
+                <span className="sr-only">Abrir Menu</span>
                 {open ? (
                   <XMarkIcon className="block h-6 w-6 " aria-hidden="true" />
                 ) : (
