@@ -7,10 +7,12 @@ import { Search } from './components/Search/Search';
 import { User } from './components/User/User'
 import { Mapa } from './components/Mapa/Mapa';
 import { NuevoCredito } from './components/NuevoCredito/NuevoCredito';
+import { VerCredito } from './components/VerCredito/VerCredito';
 
 function App() {
   const [newModal, setNewModal] = useState(false)
   const [nuevoCredito, setNuevoCredito] = useState(false)
+  const [verCredito, setVerCredito] = useState(false)
   const latitude = -2.2174673333358568; // Ejemplo de latitud
   const longitude = -80.85680016072722; // Ejemplo de longitud
   const zoom = 1;
@@ -24,7 +26,7 @@ function App() {
         <Search/>
         <User onClick={()=>setNuevoCredito(true)} detalles='Otorgar Crédito' color='#339955'/>
         <User detalles='Otorgar Crédito' color='#339955' />
-        <User detalles='Ver Crédito' color='#339955' />
+        <User onClick={()=>setVerCredito(true)} detalles='Ver Crédito' color='#339955' />
         <User detalles='Otorgar Crédito' color='#339955' />
         <User detalles='Otorgar Crédito' color='#339955' />
         
@@ -32,6 +34,8 @@ function App() {
       <MapLink latitude={latitude} longitude={longitude} />
       {newModal && <NewUser setNewModal={setNewModal}/>}
       {nuevoCredito && <NuevoCredito setNuevoCredito={setNuevoCredito}/>}
+      {verCredito && <VerCredito setVerCredito={setVerCredito}/>}
+      
       <Mapa longitude={longitude} latitude={latitude} zoom={zoom}/>
 
   </div>

@@ -29,7 +29,7 @@ export const NuevoCredito = ({ setNuevoCredito }) => {
 
   return (
     <div className="w-screen h-screen fixed items-center justify-center flex top-0 z-50 bg-[#0101019c]">
-      <div className="relative rounded-2xl w-11/12 h-4/5 p-10 bg-white">
+      <div className="relative flex flex-col gap-10 rounded-2xl w-11/12 h-4/5 p-10 bg-white">
         <h2 className="font-black text-3xl p-5 w-full text-center">
           Registrar Nuevo Pago
         </h2>
@@ -50,7 +50,7 @@ export const NuevoCredito = ({ setNuevoCredito }) => {
             <div>
               <RadioGroup value={tipoPago} onChange={setTipoPago}>
                 <RadioGroup.Label className="sr-only">Tipo de Pago</RadioGroup.Label>
-                <div className="space-y-2">
+                <div className="space-y-2 flex flex-col  gap-4">
                   {tiposDePago.map((tipo) => (
                     <RadioGroup.Option
                       key={tipo}
