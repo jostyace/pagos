@@ -8,7 +8,7 @@ export const User = ({detalles, onClick, longitud, latitud }) => {
   };
 
   const abrirLocation = () => {
-    const url = `https://www.google.com/maps/dir/?api=1&destination=${latitud},${longitud}`;
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${longitud},${latitud}`;
     window.open(url, '_blank');
   };
 
