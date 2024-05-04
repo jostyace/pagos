@@ -1,6 +1,6 @@
 import { MapPinIcon } from "@heroicons/react/24/outline"
 
-export const User = ({detalles, onClick, longitud, latitud }) => {
+export const User = ({detalles, onClick, longitude, latitude }) => {
 
   const handleClick = () => {
     const url = 'https://wa.me/+593982451264';
@@ -8,7 +8,7 @@ export const User = ({detalles, onClick, longitud, latitud }) => {
   };
 
   const abrirLocation = () => {
-    const url = `https://www.google.com/maps/dir/?api=1&destination=${longitud},${latitud}`;
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
     window.open(url, '_blank');
   };
 
