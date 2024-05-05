@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">PagosDiarios</string>
-    <string name="title_activity_main">PagosDiarios</string>
-    <string name="package_name">com.pagosdiarios.app</string>
-    <string name="custom_url_scheme">com.pagosdiarios.app</string>
-</resources>
