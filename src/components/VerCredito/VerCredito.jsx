@@ -15,7 +15,7 @@ export const VerCredito = ({ setVerCredito }) => {
 
   return (
     <div className="w-screen h-screen fixed items-center justify-center flex top-0 z-50 bg-[#0101019c]">
-      <div className="relative flex flex-col gap-2 rounded-2xl w-11/12 !h-[90%] p-10 bg-white">
+      <div className="relative flex flex-col gap-2 rounded-2xl w-11/12 overflow-y-scroll !h-[80%] p-10 bg-white">
         <h2 className="font-black text-xl p-1 w-full text-center">
           Detalles del Crédito
         </h2>
@@ -37,6 +37,34 @@ export const VerCredito = ({ setVerCredito }) => {
         <RadioGroup value={opcionesSeleccionadas} onChange={setOpcionesSeleccionadas}>
           <RadioGroup.Label className="sr-only">Días de Pago</RadioGroup.Label>
           <div className="grid grid-cols-6 gap-3 ">
+            {Array.from({ length: 30 }, (_, index) => index + 1).map((opcion) => (
+              <RadioGroup.Option
+                key={opcion}
+                value={opcion}
+                className={({ active, checked }) =>
+                  `${
+                    active
+                      ? 'ring-2 ring-white/60 ring-offset-2 ring-offset-sky-300'
+                      : ''
+                  }
+                  ${checked ? 'bg-sky-900/75 text-white' : 'bg-white'}
+                    relative flex cursor-pointer rounded-lg px-5 py-4 shadow-md focus:outline-none`
+                }
+              >
+                {({ active, checked }) => (
+                  <div className="flex w-full items-center justify-center">
+                    <RadioGroup.Label
+                      as="p"
+                      className={`font-medium text-center ${
+                        checked ? 'text-white' : 'text-gray-900'
+                      }`}
+                    >
+                      {opcion}
+                    </RadioGroup.Label>
+                  </div>
+                )}
+              </RadioGroup.Option>
+            ))}
             {Array.from({ length: 30 }, (_, index) => index + 1).map((opcion) => (
               <RadioGroup.Option
                 key={opcion}
