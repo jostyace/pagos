@@ -11,7 +11,9 @@ export default defineConfig({
         'favicon.svg', // Incluir directamente
         'img/*.png',   // Incluir todos los PNG en la carpeta img
         '*.css',       // Incluir todos los CSS en la carpeta public
-        '*.js'         // Incluir todos los JS en la carpeta public
+        '*.js',
+        '*.svg',
+        'icons/'         // Incluir todos los JS en la carpeta public
       ], // Añade otros activos estáticos según sea necesario
       manifest: {
         name: 'Nombre de tu Aplicación',
