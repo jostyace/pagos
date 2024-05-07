@@ -12,6 +12,7 @@ export default defineConfig({
         'img/*.png',   // Incluir todos los PNG en la carpeta img
         '*.css',       // Incluir todos los CSS en la carpeta public
         '*.js',
+        '*.jpg',
         '*.svg',
         'icons/'         // Incluir todos los JS en la carpeta public
       ], // Añade otros activos estáticos según sea necesario
